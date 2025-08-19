@@ -18,20 +18,20 @@
         <div class="container my-4">
             <div class="d-flex justify-content-between align-items-center mb-4">
                 <h1 class="display-4 fw-bold text-center">Fruteira</h1>
-                <button id="add-fruit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFruitModal">
+                <button id="add-fruit" type="button" class="btn btn-primary" data-bs-toggle="modal"
+                    data-bs-target="#addFruitModal">
                     <i class="bi bi-plus-lg"></i> Adicionar Fruta
                 </button>
             </div>
             <div id="cardapio-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
         </div>
 
-        <div class="modal fade" id="addFruitModal" tabindex="-1" aria-labelledby="addFruitModalLabel"
-            aria-hidden="true">
+        <div class="modal fade" id="addFruitModal">
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h1 class="modal-title fs-5" id="addFruitModalLabel">Adicionar Nova Fruta</h1>
-                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                     </div>
                     <div class="modal-body">
                         <form id="add-fruit-form">
@@ -44,16 +44,17 @@
                                 <input type="text" class="form-control" id="cientifico-name" required>
                             </div>
                             <div class="mb-3">
-                                <label for="producao-media" class="col-form-label">Produção Média por Safra (Kg):</label>
+                                <label for="producao-media" class="col-form-label">Produção Média por Safra
+                                    (Kg):</label>
                                 <input type="number" class="form-control" id="producao-media" step="0.1" required>
                             </div>
                             <div class="mb-3">
                                 <label for="data-plantio" class="col-form-label">Data do Plantio:</label>
                                 <input type="date" class="form-control" id="data-plantio" required>
                             </div>
-                             <div class="mb-3">
-                                <label for="fruit-image" class="col-form-label">Imagem:</label>
-                                <input type="file" class="form-control" id="fruit-image" accept="image/*" required>
+                            <div class="mb-3">
+                                <label for="fruit-image-url" class="col-form-label">URL da Imagem:</label>
+                                <input type="url" class="form-control" id="fruit-image-url" required>
                             </div>
                         </form>
                     </div>

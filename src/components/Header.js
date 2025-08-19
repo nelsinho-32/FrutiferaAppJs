@@ -20,10 +20,10 @@ export function renderHeader() {
                   </div>
                   <a href="${basePath}src/cart/shoppingCart.html"><i class="bi bi-calendar-week"></i></a>
                   <div class="dropdown ms-3">
-                      <a href="#" id="dropdownMenuCasa" data-bs-toggle="dropdown" aria-expanded="false">
+                      <a href="#" id="dropdownMenuCasa" data-bs-toggle="dropdown">
                           <i class="bi bi-house-fill fs-4"></i>
                       </a>
-                      <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuCasa">
+                      <ul class="dropdown-menu dropdown-menu-end">
                           <li>
                               <a class="dropdown-item d-flex align-items-center" href="${basePath}src/profile/profile.html">
                                   <i class="bi bi-person-circle me-2"></i> Perfil
@@ -52,12 +52,12 @@ export function renderHeader() {
           </div>
       </nav>
       <!-- Modal -->
-      <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="myModalLabel">
+      <div class="modal fade" id="myModal" tabindex="-1">
           <div class="modal-dialog">
               <div class="modal-content">
                   <div class="modal-header">
                       <h5 class="modal-title" id="myModalLabel">Notificações</h5>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
                   </div>
                   <div class="modal-body">
                       Aqui estão suas notificações mais recentes.

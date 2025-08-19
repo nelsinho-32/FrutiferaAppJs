@@ -29,51 +29,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
     // clique do button de cadastro
     const handleCadastroClick = () => {
-        // valores do form
-        const nomeEspecie = document.getElementById('especie-name').value;
-        const nomeCientifico = document.getElementById('cientifico-name').value;
-        const producaoMedia = parseFloat(document.getElementById('producao-media').value);
-        const dataPlantio = document.getElementById('data-plantio').value;
-        const imageFruit = document.getElementById('fruit-image').files[0];
+    // valores do form
+    const nomeEspecie = document.getElementById('especie-name').value;
+    const nomeCientifico = document.getElementById('cientifico-name').value;
+    const producaoMedia = parseFloat(document.getElementById('producao-media').value);
+    const dataPlantio = document.getElementById('data-plantio').value;
+    const imageUrl = document.getElementById('fruit-image-url').value;
 
-        // Validação
-        if (!nomeEspecie || !nomeCientifico || isNaN(producaoMedia) || !dataPlantio || !imageFruit) {
-            alert('Preencha todos os campos.');
-            return;
-        }
+    // Validação
+    if (!nomeEspecie || !nomeCientifico || isNaN(producaoMedia) || !dataPlantio || !imageUrl) {
+        alert('Preencha todos os campos.');
+        return;
+    }
 
-        const reader = new FileReader();
-        reader.onload = function(e) {
-            // Nova fruteira
-            const novaFruteira = {
-                id: Date.now(),
-                nome: nomeEspecie,
-                nomeCientifico: nomeCientifico,
-                producaoMedia: producaoMedia,
-                dataPlantio: dataPlantio,
-                imagem: e.target.result
-            };
-
-            // Salvar no LocalStorage
-            let fruteiras = JSON.parse(localStorage.getItem('fruteiras')) || [];
-            fruteiras.push(novaFruteira);
-            localStorage.setItem('fruteiras', JSON.stringify(fruteiras));
-            alert('Fruteira cadastrada!');
-            
-            // Limpa o form
-            if(addFruitForm) {
-                addFruitForm.reset();
-            }
-
-            // Fecha o modal 
-            const modalInstance = bootstrap.Modal.getInstance(modalElement);
-            if (modalInstance) {
-                modalInstance.hide();
-            }
-            carregarFruteiras();
-        };
-        reader.readAsDataURL(imageFruit);
+    // Nova fruteira com a URL da imagem
+    const novaFruteira = {
+        id: Date.now(),
+        nome: nomeEspecie,
+        nomeCientifico: nomeCientifico,
+        producaoMedia: producaoMedia,
+        dataPlantio: dataPlantio,
+        imagem: imageUrl 
     };
+
+    // Salvar no LocalStorage
+    let fruteiras = JSON.parse(localStorage.getItem('fruteiras')) || [];
+    fruteiras.push(novaFruteira);
+    localStorage.setItem('fruteiras', JSON.stringify(fruteiras));
+    alert('Fruteira cadastrada!');
+    
+    // Limpa o form
+    if(addFruitForm) {
+        addFruitForm.reset();
+    }
+
+    // Fecha o modal 
+    const modalInstance = bootstrap.Modal.getInstance(modalElement);
+    if (modalInstance) {
+        modalInstance.hide();
+    }
+    carregarFruteiras();
+};
+
 
     // Ver se o button de cadastrar-fruteira-btn existe
     if (cadastrarBtn) {

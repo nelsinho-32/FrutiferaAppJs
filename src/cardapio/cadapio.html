@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Cardápio Doce Esquina</title>
+    <title>Cadastro de Frutas</title>
     <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
     <link rel="stylesheet" href="../../assets/css/index.css">
@@ -16,77 +16,54 @@
     <header id="header-placeholder"></header>
     <main>
         <div class="container my-4">
-            <h1 class="display-4 fw-bold mb-4 text-center">Catálogo</h1>
-            <div class="flex items-center gap-4">
-                <!-- Search (Pesquisa/Busca)-->
-                <div class="relative w-full max-w-xs hidden md:block d-flex mb-2 align-items-center mr-2" style="justify-content: flex-end !important;">
-                    <div class="relative w-full max-w-xs hidden md:block d-flex mb-2 justify-content-flex-end align-items-center mr-2 me-2"
-                        ref="searchContainerRef">
-                        <input type="text" placeholder="Buscar..."
-                            class="w-full bg-gray-100 border border-gray-200 rounded-pill py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-transparent me-2">
-                        <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none me-2">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none"
-                                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                                class="text-gray-400">
-                                <circle cx="11" cy="11" r="8" />
-                                <path d="m21 21-4.3-4.3" />
-                            </svg>
-                        </div>
-                    </div>
-                    <!-- Adicionar -->
-                    <div>
-                        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="handleAddProduct()"
-                            data-bs-whatever="@mdo">
-                            <i class="bi bi-file-plus"></i>
-                        </button>
-                    </div>
-                </div>
-                <div id="cardapio-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+            <div class="d-flex justify-content-between align-items-center mb-4">
+                <h1 class="display-4 fw-bold text-center">Fruteira</h1>
+                <button id="add-fruit" type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addFruitModal">
+                    <i class="bi bi-plus-lg"></i> Adicionar Fruta
+                </button>
             </div>
-            <div id="cart-items" class="mt-4">
-                <!-- Os itens adicionados ao carrinho aparecerão aqui -->
-            </div>
+            <div id="cardapio-container" class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"></div>
+        </div>
 
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                aria-hidden="true">
-                <div class="modal-dialog">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h1 class="modal-title fs-5" id="exampleModalLabel">Adicionar ao Cardápio</h1>
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                        </div>
-                        <div class="modal-body">
-                            <form>
-                                <div class="mb-3">
-                                    <label for="recipient-name" class="col-form-label">Nome da espécie:</label>
-                                    <input type="text" class="form-control" id="recipient-name">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="message-text" class="col-form-label">Nome científico:</label>
-                                    <textarea class="form-control" id="message-text"></textarea>
-                                </div>
-                                <div class="mb-3">
-                                    <label for="product-price" class="col-form-label">Produção média por safra (Kg):</label>
-                                    <input type="number" class="form-control" id="product-price" step="0.01">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="product-price" class="col-form-label">Data do plantio:</label>
-                                    <input type="number" class="form-control"  step="0.01">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="product-image" class="col-form-label">Imagem:</label>
-                                    <input type="file" class="form-control" id="product-image" accept="image/*">
-                                </div>
-                            </form>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
-                            <button id="cadastrar-button" type="button" class="btn btn-primary">Cadastrar</button>
-                        </div>
+        <div class="modal fade" id="addFruitModal" tabindex="-1" aria-labelledby="addFruitModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="addFruitModalLabel">Adicionar Nova Fruta</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="add-fruit-form">
+                            <div class="mb-3">
+                                <label for="especie-name" class="col-form-label">Nome da Espécie (Popular):</label>
+                                <input type="text" class="form-control" id="especie-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cientifico-name" class="col-form-label">Nome Científico:</label>
+                                <input type="text" class="form-control" id="cientifico-name" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="producao-media" class="col-form-label">Produção Média por Safra (Kg):</label>
+                                <input type="number" class="form-control" id="producao-media" step="0.1" required>
+                            </div>
+                            <div class="mb-3">
+                                <label for="data-plantio" class="col-form-label">Data do Plantio:</label>
+                                <input type="date" class="form-control" id="data-plantio" required>
+                            </div>
+                             <div class="mb-3">
+                                <label for="fruit-image" class="col-form-label">Imagem:</label>
+                                <input type="file" class="form-control" id="fruit-image" accept="image/*" required>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                        <button id="cadastrar-fruteira-btn" type="button" class="btn btn-primary">Cadastrar</button>
                     </div>
                 </div>
             </div>
+        </div>
     </main>
     <footer id="footer-placeholder" class="footer"></footer>
 </body>

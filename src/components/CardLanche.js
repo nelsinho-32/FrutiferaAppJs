@@ -1,18 +1,29 @@
-export function criarCardLanche(lanche) {
+export function criarCardFruteira(fruteira) {
+    const dataPlantio = new Date(fruteira.dataPlantio);
+    const hoje = new Date();
+    
+    // Converter idade de plantio para meses
+    let meses = (hoje.getFullYear() - dataPlantio.getFullYear()) * 12; 
+    meses -= dataPlantio.getMonth();
+    meses += hoje.getMonth();
+    const idadeEmMeses = meses <= 0 ? 0 : meses; // meses não ser negativo
+
+    // ------ .toLocaleDateString('pt-BR', { timeZone: 'UTC' } Foi pesquisado por IA
+    // O método `toLocaleDateString` é usado para formatar a data em uma string legível.
+    // O parâmetro `'pt-BR'` define o idioma como português do Brasil.
+    // A opção `{ timeZone: 'UTC' }` garante que a data seja interpretada no fuso horário UTC,
+    const dataFormatada = new Date(fruteira.dataPlantio).toLocaleDateString('pt-BR', { timeZone: 'UTC' });
+
     return `
       <div class="col">
           <div class="card h-100 shadow-sm">
-              <img src="${lanche.imagem}" class="card-img-top" alt="${lanche.nome}">
+              <img src="${fruteira.imagem}" class="card-img-top" alt="${fruteira.nome}">
               <div class="card-body d-flex flex-column">
-                  <h5 class="card-title">${lanche.nome}</h5>
-                  <p class="card-text text-truncate" title="${lanche.descricaoCompleta}">
-                      ${lanche.descricaoCurta}
-                  </p>
-                  <span class="fs-3 d-block mb-3">${lanche.preco}</span>
-                  <div class="mt-auto">
-                      <a href="#" class="btn btn-shopping-cart">Adicionar <i class="bi bi-cart-plus"></i></a>
-                      <a href="#" class="btn btn-buy">Comprar</a>
-                  </div>
+                  <h5 class="card-title">${fruteira.nome}</h5>
+                  <p class="card-text mb-1"><strong>Nome Científico:</strong> ${fruteira.nomeCientifico}</p>
+                  <p class="card-text mb-1"><strong>Produção Média:</strong> ${fruteira.producaoMedia} Kg/safra</p>
+                  <p class="card-text mb-1"><strong>Data de Plantio:</strong> ${dataFormatada}</p>
+                  <p class="card-text mb-1"><strong>Idade:</strong> ${idadeEmMeses} meses</p>
               </div>
           </div>
       </div>

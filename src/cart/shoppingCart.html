@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrinho - Doce Esquina</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+    <link rel="stylesheet" href="shoppingCart.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/index.js" type="module" defer></script>
+    <script src="shoppingCart.js" type="module" defer></script>
+</head>
+
+<body>
+    <header id="header-placeholder"></header>
+    <main>
+        <div class="container my-4">
+            <div class="row">
+                <!-- Produtos -->
+                <div class="col-lg-8">
+                    <div class="box_check">
+                        <input type="checkbox" id="checkAll" class="form-check-input ms-4">
+                        <label for="checkAll" class="form-check-label ms-3">Selecionar todos os produtos</label>
+                    </div>
+                    <div class="mt-4 select-produtos">
+                        <h4>Produtos no carrinho:</h4>
+                        <div class="row row-cols-1 g-3 content-card" id="cart-items">
+                            <!-- Os itens adicionados ao carrinho aparecerão aqui -->
+                        </div>
+                    </div>
+                </div>
+                <!-- Resumo da compra -->
+                <div class="col-lg-4">
+                    <div class="resumo-carrinho">
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="span-resumo">Resumo da compra:</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-6">Subtotal:</span>
+                            <span class="fs-6" id="subtotal">R$ 0,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-6">Taxa de entrega:</span>
+                            <span class="fs-6">R$ 5,00</span>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center mt-3">
+                            <span class="fs-5 fw-bold">Total:</span>
+                            <span class="fs-5 fw-bold" id="total">R$ 0,00</span>
+                        </div>
+                        <button class="btn btn-success w-100 mt-4">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer id="footer-placeholder" class="footer"></footer>
+</body>
+
+</html>

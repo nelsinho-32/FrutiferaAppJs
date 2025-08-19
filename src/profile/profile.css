@@ -1,0 +1,81 @@
+/* Estilização geral */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+}
+
+.container-perfil {
+    max-width: 800px;
+    margin: 2rem auto;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 2.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+.perfil-header {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+}
+
+.perfil-img {
+    max-width: 220px;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.perfil-img-element {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.perfil-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.perfil-nome {
+    font-size: 2.2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 0.5rem; 
+}
+
+.perfil-detalhes {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.perfil-contato,
+.perfil-endereco {
+    font-size: 1.2rem;
+    color: #6c757d;
+}
+
+.edit-perfil {
+    padding: 10px;
+    cursor: pointer;
+    align-self: flex-start;
+}
+
+.edit-perfil i {
+    font-size: 1.6rem;
+    color: #007bff;
+    transition: all 0.2s ease-in-out;
+}
+
+.edit-perfil i:hover {
+    color: #0056b3;
+    transform: scale(1.1);
+}

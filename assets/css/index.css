@@ -1,0 +1,99 @@
+body {
+    background-color: #f8f9fa;
+}
+
+.navbar-brand img {
+    max-width: 60px;
+}
+
+.nav-bar {
+    height: 80px;
+    font-size: 20px;
+}
+
+.footer-logo img {
+    max-width: 80px;
+}
+
+.footer-section h1 {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.footer-section a {
+    font-size: 1rem;
+}
+
+.footer-social img {
+    width: 32px;
+    margin-right: 0.5rem;
+}
+
+.footer-whatsapp img {
+    width: 28px;
+    margin-right: 0.5rem;
+}
+
+.footer {
+    background: #fff;
+    border-top: 1px solid #dee2e6;
+    padding: 2rem 0 1rem 0;
+    margin-top: 2rem;
+}
+
+@media (max-width: 991px) {
+    .footer .row>div {
+        margin-bottom: 2rem;
+    }
+}
+
+.carrossel-img {
+    max-height: 800px; 
+    object-fit: cover; 
+    width: 100%; 
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-text {
+    font-size: 1.3rem;
+    color: #6c757d;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%;
+    display: block;
+    cursor: pointer; 
+}
+
+.btn-buy {
+    background-color: #0a58ca;
+    color: #fff;
+    border-color: none;
+}
+
+.btn-buy:hover {
+    background-color: #0d6efd;
+    color: #fff;
+    border-color: none;
+}
+
+.btn-shopping-cart {
+    background-color: #4c525b;
+    color: #fff;
+    border-color: none;
+}
+
+.btn-shopping-cart:hover {
+    background-color: #8590a0;
+    color: #fff;
+    border-color: none;
+}

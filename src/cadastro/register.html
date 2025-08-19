@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro</title>
+    <link rel="stylesheet" href="../../node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../node_modules/bootstrap-icons/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet" href="../../assets/css/index.css">
+    <script src="../../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../src/index.js" type="module" defer></script>
+</head>
+<body>
+    <header id="header-placeholder"></header>
+    <main>
+        <div class="container my-5">
+            <h1 class="display-5 fw-bold mb-4 text-center">Cadastro de Usuário</h1>
+            <form class="form-cadastro">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <label for="nome" class="form-label">Nome Completo</label>
+                        <input type="text" class="form-control" id="nome" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="telefone" class="form-label">Telefone</label>
+                        <input type="tel" class="form-control" id="telefone" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="UF" class="form-label">UF</label>
+                        <input type="text" class="form-control" id="uf" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="municipio" class="form-label">Município</label>
+                        <input type="text" class="form-control" id="municipio" required>
+                    </div>
+                    <div class="col-md-8">
+                        <label for="rua" class="form-label">Rua/Avenida</label>
+                        <input type="text" class="form-control" id="rua" required>
+                    </div>
+                    <div class="col-md-4">
+                        <label for="numero" class="form-label">Número</label>
+                        <input type="number" class="form-control" id="numero" required>
+                    </div>
+                    <div class="col-md-12">
+                        <label for="complemento" class="form-label">Complemento</label>
+                        <input type="text" class="form-control" id="complemento">
+                    </div>
+                    <div class="col-md-6">
+                        <label for="email" class="form-label">E-mail</label>
+                        <input type="email" class="form-control" id="email" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="senha" class="form-label">Senha</label>
+                        <input type="password" class="form-control" id="senha" required>
+                    </div>
+                    <div class="col-md-6">
+                        <label for="confirm-senha" class="form-label">Confirme sua senha</label>
+                        <input type="password" class="form-control" id="confirm-senha" required>
+                    </div>
+                </div>
+                <div class="text-center mt-4">
+                    <button type="submit" class="btn btn-primary btn-lg">Cadastrar</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <footer id="footer-placeholder" class="footer"></footer>
+</body>
+</html>
